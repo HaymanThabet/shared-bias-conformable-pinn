@@ -1,15 +1,11 @@
-# Cylinder-wake benchmark
-
-This folder contains the observation-driven two-dimensional cylinder-wake implementation used in the manuscript.
-
-The benchmark uses the public `cylinder_nektar_wake.mat` CFD dataset associated with the cylinder-wake example of Raissi et al.
-
 ## Data file
 
-Download `cylinder_nektar_wake.mat` from the original public PINN dataset source and place it in this folder:
+The script first looks for `cylinder_nektar_wake.mat` in this folder:
 
 `cylinder_wake/cylinder_nektar_wake.mat`
 
-The script `cylinder_wake_q07.py` will then load the dataset locally.
+If the dataset is not found, the script attempts to download the original public file automatically from the PINN repository of Raissi et al.
+
+The dataset may also be downloaded manually and placed beside `cylinder_wake_q07.py`.
 
 The repository does not redistribute the dataset itself.
