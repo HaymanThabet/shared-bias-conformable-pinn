@@ -1,11 +1,26 @@
-## Data file
+# Cylinder-wake benchmark
 
-The script first looks for `cylinder_nektar_wake.mat` in this folder:
+This folder contains the two-dimensional observation-driven cylinder-wake implementation used in the manuscript.
+
+The script `cylinder_wake_q07.py` compares:
+
+- Standard PINN + Adam
+- R3-PINN + Adam
+- Shared-bias PINN + Adam–vCFGD
+
+Clean, limited-observation, and 1% noise regimes are evaluated under a common training and held-out testing protocol.
+
+## Data
+
+The benchmark uses the public `cylinder_nektar_wake.mat` CFD dataset associated with Raissi et al.
+
+The script first looks for the dataset at:
 
 `cylinder_wake/cylinder_nektar_wake.mat`
 
-If the dataset is not found, the script attempts to download the original public file automatically from the PINN repository of Raissi et al.
+If the file is unavailable, the script attempts to download it automatically. It may also be downloaded manually and placed beside `cylinder_wake_q07.py`. The dataset is not redistributed in this repository.
 
-The dataset may also be downloaded manually and placed beside `cylinder_wake_q07.py`.
+## Run
 
-The repository does not redistribute the dataset itself.
+```bash
+python cylinder_wake_q07.py
